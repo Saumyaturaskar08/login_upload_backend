@@ -3,7 +3,7 @@ const MONGODB_URL = "mongodb+srv://saumyaturaskar:VQlMrH7WRhYGxTgg@cluster0.fjdl
 const connect = ()=>{
     mongoose.connect(MONGODB_URL,{
         useNewUrlParser:true,
-        useUnifiedTopology:true
+        useUnifiedTopology:true //monitoring
     })
     .then(console.log(`DB conncet`))
     .catch((error)=>{
