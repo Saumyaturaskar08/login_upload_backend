@@ -4,7 +4,7 @@ import app from './App.js';
 
 dotenv.config();
 
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3000;
 
 // Create an instance of the Express app
 const server = express();

@@ -8,7 +8,7 @@ export const register = async (req, res) => {
 
     // Check if any required field is missing
     if (!firstName || !lastName || !email || !country || !state || !city || !password) {
-      return res.status(400).json({ message: 'All fields are required' });
+      return res.status(400).json({ message: 'All fields are required xyc' });
     }
 
     // Check if email is already registered
@@ -69,6 +69,20 @@ export const login = async (req, res) => {
     res.status(200).json({ message: 'Login successful', token });
   } catch (error) {
     console.error(error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+
+// Fetch all users
+export const getAllUsers = async (req, res) => {
+  try {
+    // Retrieve all users from the database
+    const users = await User.find();
+
+    // Return the list of users
+    res.status(200).json({ users });
+  } catch (error) {
+    console.error('Error while fetching all users:', error);
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };
