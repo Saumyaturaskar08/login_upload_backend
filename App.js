@@ -39,6 +39,11 @@ app.use((req, res, next) => {
   //     console.log(`Server is running on port ${PORT}`);
   // });
 
+  // app.use(cors({
+  //   origin: 'http://localhost:3000', // Allow requests from localhost:3000
+  //   credentials: true // Enable sending cookies from the client to the server
+  // }));
+
 // Routes
 app.use('/api/users', userRoutes);
 app.use('/api/documents', documentRoutes);
