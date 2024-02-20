@@ -22,17 +22,17 @@ import mongoose from 'mongoose';
       message: 'Invalid email address',
     },
   },
-  country: {
+  selectedCountry: {
     type: String,
     required: true,
     // trim: true,
   },
-  state: {
+  selectedState: {
     type: String,
     required: true,
     // trim: true,
   },
-  city: {
+  selectedCity: {
     type: String,
     required: true,
     // trim: true,

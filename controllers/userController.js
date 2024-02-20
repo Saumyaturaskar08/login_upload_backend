@@ -4,10 +4,10 @@ import generateToken from '../utils/generateToken.js';
 // Register a new user
 export const register = async (req, res) => {
   try {
-    const { firstName, lastName, email, country, state, city, password } = req.body ;
+    const { firstName, lastName, email, selectedCountry, selectedState, selectedCity, password } = req.body ;
 
     // Check if any required field is missing
-    if (!firstName || !lastName || !email || !country || !state || !city || !password) {
+    if (!firstName || !lastName || !email || !selectedCountry || !selectedState || !selectedCity || !password) {
       return res.status(400).json({ message: 'All fields are required xyc' });
     }
 
@@ -15,6 +15,7 @@ export const register = async (req, res) => {
     const isEmailTaken = await User.exists({ email });
     if (isEmailTaken) {
       return res.status(400).json({ message: 'Email already registered' });
+      
     }
 
     // Create a new user
@@ -22,9 +23,9 @@ export const register = async (req, res) => {
       firstName,
       lastName,
       email,
-      country,
-      state,
-      city,
+      selectedCountry,
+      selectedState,
+      selectedCity,
       password, // In a real-world scenario, this password should be hashed
     });
 
@@ -44,7 +45,7 @@ export const register = async (req, res) => {
       return res.status(400).json({ message: 'Validation failed', errors: validationErrors });
     }
 
-    res.status(500).json({ message: 'Saurabh Show Error Internal Server Error' });
+    res.status(500).json({ message: ' Show Error Internal Server Error' });
   }
 };
 
